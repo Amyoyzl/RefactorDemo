@@ -2,6 +2,8 @@ package gildedRose;
 public class GildedRose {
     Item[] items;
 
+    private final static int BASE_QUALITY = 50;
+
     public GildedRose(Item[] items) {
         this.items = items;
     }
@@ -11,18 +13,18 @@ public class GildedRose {
             if (isNotAgedBrieAndNotBackstage(items[i])) {
                 updateQualityExceptSulfuras(items[i]);
             } else {
-                if (items[i].quality < 50) {
+                if (items[i].quality < BASE_QUALITY) {
                     items[i].quality = items[i].quality + 1;
 
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (items[i].sellIn < 11) {
-                            if (items[i].quality < 50) {
+                            if (items[i].quality < BASE_QUALITY) {
                                 items[i].quality = items[i].quality + 1;
                             }
                         }
 
                         if (items[i].sellIn < 6) {
-                            if (items[i].quality < 50) {
+                            if (items[i].quality < BASE_QUALITY) {
                                 items[i].quality = items[i].quality + 1;
                             }
                         }
@@ -42,7 +44,7 @@ public class GildedRose {
                         items[i].quality = items[i].quality - items[i].quality;
                     }
                 } else {
-                    if (items[i].quality < 50) {
+                    if (items[i].quality < BASE_QUALITY) {
                         items[i].quality = items[i].quality + 1;
                     }
                 }
