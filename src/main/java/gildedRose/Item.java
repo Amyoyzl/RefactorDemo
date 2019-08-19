@@ -29,6 +29,12 @@ public class Item {
         strategy.updateQuality(this);
     }
 
+    public void decreaseQualityIfQualityGrantZero() {
+        if (quality > 0) {
+            quality --;
+        }
+    }
+
    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
