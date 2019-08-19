@@ -90,4 +90,15 @@ public class CustomerTest {
                 "You earned 1 frequent renter points", statement);
     }
 
+    @Test
+    public void should_return_not_rent_any_movie_statement() {
+        Customer customer = new Customer("test");
+
+        String statement = customer.statement();
+
+        assertEquals("Rental Record for test\n" +
+                "Amount owed is 0.0\n" +
+                "You earned 0 frequent renter points", statement);
+    }
+
 }
