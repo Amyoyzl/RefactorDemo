@@ -72,4 +72,15 @@ public class GildedRoseTest {
         assertEquals(updateItem.toString(), items[0].toString());
     }
 
+    @Test
+    public void should_update_gildedRose_items_when_updateQuality_given_item_name_Sulfuras_and_sellIn_8_and_quality_3() {
+        Item[] items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 8, 3)};
+        GildedRose gildedRose = new GildedRose(items);
+        Item updateItem =  new Item("Sulfuras, Hand of Ragnaros", 8, 3);
+
+        gildedRose.updateQuality();
+
+        assertEquals(updateItem.toString(), items[0].toString());
+    }
+
 }
