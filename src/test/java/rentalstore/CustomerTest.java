@@ -62,5 +62,19 @@ public class CustomerTest {
                 "You earned 1 frequent renter points", statement);
     }
 
+    @Test
+    public void should_return_CHILDRENS_statement_rent_three_days() {
+        Customer customer = new Customer("test");
+        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 3);
+        customer.addRental(rental);
+
+        String statement = customer.statement();
+
+        assertEquals("Rental Record for test\n" +
+                "\ttitle1\t1.5\n" +
+                "Amount owed is 1.5\n" +
+                "You earned 1 frequent renter points", statement);
+    }
+
 
 }
