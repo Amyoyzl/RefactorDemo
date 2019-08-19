@@ -8,10 +8,18 @@ public class Item {
 
     public int quality;
 
+    public final static int BASE_QUALITY = 50;
+
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
+    }
+
+    protected void updateQualityLessBaseQuality() {
+        if (quality < BASE_QUALITY) {
+            quality ++;
+        }
     }
 
    @Override
