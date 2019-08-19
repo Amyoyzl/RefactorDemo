@@ -105,4 +105,15 @@ public class GildedRoseTest {
         assertEquals(updateItem.toString(), items[0].toString());
     }
 
+    @Test
+    public void should_update_gildedRose_items_when_updateQuality_given_item_name_Backstage_and_sellIn_5_and_quality_48() {
+        Item[] items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 5, 48)};
+        GildedRose gildedRose = new GildedRose(items);
+        Item updateItem =  new Item("Backstage passes to a TAFKAL80ETC concert", 4, 50);
+
+        gildedRose.updateQuality();
+
+        assertEquals(updateItem.toString(), items[0].toString());
+    }
+
 }
