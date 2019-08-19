@@ -9,7 +9,7 @@ public class CustomerTest {
     @Test
     public void should_return_REGULAR_statement_rent_two_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 2);
+        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 2, new RegularRental());
         customer.addRental(rental);
 
         String statement = customer.textStatement();
@@ -23,7 +23,7 @@ public class CustomerTest {
     @Test
     public void should_return_REGULAR_statement_rent_three_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 3);
+        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 3, new RegularRental());
         customer.addRental(rental);
 
         String statement = customer.textStatement();
@@ -37,7 +37,7 @@ public class CustomerTest {
     @Test
     public void should_return_NEW_RELEASE_statement_rent_three_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 3);
+        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 3, new ReleaseRental());
         customer.addRental(rental);
 
         String statement = customer.textStatement();
@@ -51,7 +51,7 @@ public class CustomerTest {
     @Test
     public void should_return_NEW_RELEASE_statement_rent_one_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 1);
+        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 1, new ReleaseRental());
         customer.addRental(rental);
 
         String statement = customer.textStatement();
@@ -65,7 +65,7 @@ public class CustomerTest {
     @Test
     public void should_return_CHILDRENS_statement_rent_three_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 3);
+        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 3, new ChildrenRental());
         customer.addRental(rental);
 
         String statement = customer.textStatement();
@@ -79,7 +79,7 @@ public class CustomerTest {
     @Test
     public void should_return_CHILDRENS_statement_rent_four_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 4);
+        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 4, new ChildrenRental());
         customer.addRental(rental);
 
         String statement = customer.textStatement();
@@ -104,7 +104,7 @@ public class CustomerTest {
     @Test
     public void should_return_REGULAR_htmlStatement_rent_two_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 2);
+        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 2, new RegularRental());
         customer.addRental(rental);
 
         String statement = customer.htmlStatement();
@@ -118,7 +118,7 @@ public class CustomerTest {
     @Test
     public void should_return_REGULAR_htmlStatement_rent_three_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 3);
+        Rental rental = new Rental(new Movie("title1", Movie.REGULAR), 3, new RegularRental());
         customer.addRental(rental);
 
         String statement = customer.htmlStatement();
@@ -132,7 +132,7 @@ public class CustomerTest {
     @Test
     public void should_return_NEW_RELEASE_htmlStatement_rent_three_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 3);
+        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 3, new ReleaseRental());
         customer.addRental(rental);
 
         String statement = customer.htmlStatement();
@@ -146,7 +146,7 @@ public class CustomerTest {
     @Test
     public void should_return_NEW_RELEASE_htmlStatement_rent_one_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 1);
+        Rental rental = new Rental(new Movie("title1", Movie.NEW_RELEASE), 1, new ReleaseRental());
         customer.addRental(rental);
 
         String statement = customer.htmlStatement();
@@ -160,7 +160,7 @@ public class CustomerTest {
     @Test
     public void should_return_CHILDRENS_htmlStatement_rent_three_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 3);
+        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 3, new ChildrenRental());
         customer.addRental(rental);
 
         String statement = customer.htmlStatement();
@@ -174,7 +174,7 @@ public class CustomerTest {
     @Test
     public void should_return_CHILDRENS_htmlStatement_rent_four_days() {
         Customer customer = new Customer("test");
-        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 4);
+        Rental rental = new Rental(new Movie("title1", Movie.CHILDRENS), 4, new ChildrenRental());
         customer.addRental(rental);
 
         String statement = customer.htmlStatement();

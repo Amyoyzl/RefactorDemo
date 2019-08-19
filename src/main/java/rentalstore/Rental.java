@@ -3,10 +3,12 @@ package rentalstore;
 public class Rental {
     private Movie movie;
     private int dayRented;
+    private BaseRental baseRental;
 
-    public Rental(Movie movie, int dayRented) {
+    public Rental(Movie movie, int dayRented, BaseRental baseRental) {
         this.movie = movie;
         this.dayRented = dayRented;
+        this.baseRental = baseRental;
     }
 
     public Movie getMovie() {
@@ -18,24 +20,6 @@ public class Rental {
     }
 
     public double calculateAmount() {
-        double amount = 0;
-        switch (movie.getPriceCode()) {
-            case Movie.REGULAR:
-                amount += 2;
-                if (this.dayRented > 2) {
-                    amount += (this.dayRented - 2) * 1.5;
-                }
-                break;
-            case Movie.NEW_RELEASE:
-                amount += this.dayRented * 3;
-                break;
-            case Movie.CHILDRENS:
-                amount += 1.5;
-                if (this.dayRented > 3) {
-                    amount += (this.dayRented - 3) * 1.5;
-                }
-                break;
-        }
-        return amount;
+        return baseRental.calculateAmount(this.dayRented);
     }
 }
